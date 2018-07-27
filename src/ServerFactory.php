@@ -217,7 +217,7 @@ class ServerFactory
      */
     public function getManipulators()
     {
-        return [
+        return array_merge($this->config['custom_manipulations'], [
             new Orientation(),
             new Crop(),
             new Size($this->getMaxImageSize()),
@@ -233,7 +233,7 @@ class ServerFactory
             new Background(),
             new Border(),
             new Encode(),
-        ];
+        ]);
     }
 
     /**
